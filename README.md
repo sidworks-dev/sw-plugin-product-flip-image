@@ -1,9 +1,13 @@
-# Sidworks %REPLACE_WITH_NAME% for Shopware 6
+# Sidworks ProductFlipImage for Shopware 6
 Description here
 
 ## Installation
 ```bash
-composer require sidworks/sw-plugin-template
+composer require sidworks/sw-plugin-product-flip-image
 bin/console plugin:refresh
-bin/console plugin:install --activate Sidworks%REPLACE_WITH_NAME%
+bin/console plugin:install --activate SidworksProductFlipImage
 ```
+
+## Todo
+- Option to remove flip from image in admin
+- Frontend work
