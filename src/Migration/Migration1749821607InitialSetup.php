@@ -21,6 +21,5 @@ class Migration1749821607InitialSetup extends MigrationStep
         ADD CONSTRAINT `fk.product.flip_id` FOREIGN KEY (`flip_id`)
             REFERENCES `product_media` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
         ');
-
     }
 }

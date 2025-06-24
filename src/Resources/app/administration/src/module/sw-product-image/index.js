@@ -1,8 +1,6 @@
 import template from './sw-product-image.html.twig';
 import './sw-product-image.scss';
 
-const { Component } = Shopware;
-
 Shopware.Component.override('sw-product-image', {
     template,
 
