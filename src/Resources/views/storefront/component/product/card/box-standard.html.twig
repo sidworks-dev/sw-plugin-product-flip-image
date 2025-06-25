@@ -1,0 +1,21 @@
+{% sw_extends "@Storefront/storefront/component/product/card/box-standard.html.twig" %}
+
+{% block component_product_box_image_link_inner %}
+    {{ parent() }}
+
+    {% block component_product_box_image_flip_image %}
+        {% set sidworksProductFlipImage = product.extensions.sidworksProductFlipImage ?? null %}
+        {% if sidworksProductFlipImage %}
+            {% set attributes = {
+                class: 'product-image is-' ~ displayMode,
+                title: (cover.translated.title ?: name)
+            } %}
+
+            {% sw_thumbnails 'product-image-thumbnails' with {
+                media: sidworksProductFlipImage,
+                sizes: sizes,
+                attributes: attributes
+            } %}
+        {% endif %}
+    {% endblock %}
+{% endblock %}
