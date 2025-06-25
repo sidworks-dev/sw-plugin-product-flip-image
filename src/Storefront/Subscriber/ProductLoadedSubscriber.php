@@ -6,7 +6,7 @@ use Shopware\Core\Content\Product\Events\ProductListingCriteriaEvent;
 use Shopware\Core\Content\Product\ProductEvents;
 use Shopware\Core\Framework\DataAbstractionLayer\Event\EntityLoadedEvent;
 use Shopware\Storefront\Page\Product\ProductPageCriteriaEvent;
-use Sidworks\ProductFlipImage\Storefront\Struct\FlipImageStruct;
+use Sidworks\ProductFlipImage\Struct\FlipImageStruct;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class ProductLoadedSubscriber implements EventSubscriberInterface
@@ -24,12 +24,12 @@ class ProductLoadedSubscriber implements EventSubscriberInterface
 
     public function onProductCriteriaLoaded(ProductPageCriteriaEvent $event): void
     {
-        $event->getCriteria()->addAssociation('flip.media');
+        $event->getCriteria()->addAssociation('flip');
     }
 
     public function onProductListingCriteria(ProductListingCriteriaEvent $event): void
     {
-        $event->getCriteria()->addAssociation('flip.media');
+        $event->getCriteria()->addAssociation('flip');
     }
 
     public function productLoaded(EntityLoadedEvent $event): void
@@ -43,12 +43,8 @@ class ProductLoadedSubscriber implements EventSubscriberInterface
             }
 
             $media = $flipImage->getMedia();
-            $url = $media->getUrl();
 
-            dd($media);
-
-            $value = new FlipImageStruct($url);
-            $product->addExtension(self::SIDWORKS_PRODUCT_FLIP_IMAGE_EXTENSION, $value);
+            $product->addExtension(self::SIDWORKS_PRODUCT_FLIP_IMAGE_EXTENSION, $media);
         }
     }
 }

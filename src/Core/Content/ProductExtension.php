@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Sidworks\ProductFlipImage\Custom;
+namespace Sidworks\ProductFlipImage\Core\Content;
 
 use Shopware\Core\Content\Product\Aggregate\ProductMedia\ProductMediaDefinition;
 use Shopware\Core\Content\Product\ProductDefinition;
