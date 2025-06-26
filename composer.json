@@ -1,6 +1,6 @@
 {
     "name": "sidworks/sw-plugin-product-flip-image",
-    "description": "Sidworks Plugin ProductFlipImage",
+    "description": "Sidworks Plugin Product Flip Image",
     "type": "shopware-platform-plugin",
     "version": "1.0.0",
     "require": {
@@ -20,10 +20,10 @@
     "extra": {
         "shopware-plugin-class": "Sidworks\\ProductFlipImage\\SidworksProductFlipImage",
         "label": {
-            "en-GB": "Sidworks Plugin ProductFlipImage"
+            "en-GB": "Sidworks Plugin Product Flip Image"
         },
         "description": {
-            "en-GB": "Sidworks Plugin ProductFlipImage"
+            "en-GB": "Sidworks Plugin Product Flip Image"
         }
     }
 }
