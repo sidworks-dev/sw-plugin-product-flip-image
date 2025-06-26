@@ -1,5 +1,5 @@
 # Sidworks Product Flip Image for Shopware 6
-This plugin allows you to assign a "flip" image to product media. When customers hover over a product image in the storefront, it automatically switches to the flip image—perfect for showing alternate angles or product variants.
+This plugin allows you to assign a flip/hover image to product media. When customers hover over a product image in the storefront, it automatically switches to the flip image, perfect for showing alternate angles or product variants.
 
 ## Images
 ![Image1](docs/s1.jpg)
