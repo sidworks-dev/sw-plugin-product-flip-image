@@ -17,13 +17,21 @@ class ProductExtension extends EntityExtension
     public function extendFields(FieldCollection $collection): void
     {
         $collection->add(
-            (new FkField('flip_id', 'flipId', ProductMediaDefinition::class))
-                ->addFlags(new ApiAware(), new Inherited(), new NoConstraint())
+            (new FkField(
+                'flip_id',
+                'flipId',
+                ProductMediaDefinition::class
+            ))->addFlags(new ApiAware(), new Inherited(), new NoConstraint())
         );
 
         $collection->add(
-            (new ManyToOneAssociationField('flip', 'flip_id', ProductMediaDefinition::class, 'id'))
-                ->addFlags(new ApiAware(), new Inherited())
+            (new ManyToOneAssociationField(
+                'flip',
+                'flip_id',
+                ProductMediaDefinition::class,
+                'id',
+                true
+            ))->addFlags(new ApiAware(), new Inherited())
         );
     }
 
