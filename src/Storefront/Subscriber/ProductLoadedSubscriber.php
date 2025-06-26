@@ -6,7 +6,6 @@ use Shopware\Core\Content\Product\Events\ProductListingCriteriaEvent;
 use Shopware\Core\Content\Product\ProductEvents;
 use Shopware\Core\Framework\DataAbstractionLayer\Event\EntityLoadedEvent;
 use Shopware\Storefront\Page\Product\ProductPageCriteriaEvent;
-use Sidworks\ProductFlipImage\Struct\FlipImageStruct;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class ProductLoadedSubscriber implements EventSubscriberInterface

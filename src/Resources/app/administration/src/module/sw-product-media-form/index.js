@@ -13,5 +13,9 @@ Shopware.Component.override('sw-product-media-form', {
         markMediaAsFlip(productMedia) {
             this.product.flipId = productMedia.id;
         },
+
+        removeFlip(productMedia) {
+            this.product.flipId = null;
+        }
     }
 });

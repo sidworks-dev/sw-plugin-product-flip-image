@@ -9,6 +9,14 @@
         >
             Use as flip
         </sw-context-menu-item>
+        <sw-context-menu-item
+            v-if="isFlip && !isCover"
+            class="sw-product-image__button-cover"
+            variant="danger"
+            @click="$emit('sw-product-image-flip-delete')"
+        >
+            Remove flip
+        </sw-context-menu-item>
     {% endblock %}
 {% endblock %}
 
