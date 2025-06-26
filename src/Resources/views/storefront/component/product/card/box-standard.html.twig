@@ -7,8 +7,9 @@
         {% set sidworksProductFlipImage = product.extensions.sidworksProductFlipImage ?? null %}
         {% if sidworksProductFlipImage %}
             {% set attributes = {
-                class: 'product-image is-' ~ displayMode,
-                title: (cover.translated.title ?: name)
+                class: 'product-image product-flip-image is-' ~ displayMode,
+                title: (cover.translated.title ?: name),
+                loading: 'lazy'
             } %}
 
             {% sw_thumbnails 'product-image-thumbnails' with {

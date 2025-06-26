@@ -1,0 +1,17 @@
+.product-image-wrapper:has(.product-flip-image) {
+    .product-image-link {
+        .product-flip-image {
+            display: none;
+        }
+
+        &:hover {
+            .product-image {
+                display: none;
+            }
+
+            .product-flip-image {
+                display: block;
+            }
+        }
+    }
+}
