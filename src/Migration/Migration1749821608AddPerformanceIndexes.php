@@ -18,6 +18,7 @@ class Migration1749821608AddPerformanceIndexes extends MigrationStep
                 ALTER TABLE `product`
                 ADD INDEX `idx_flip_id` (`flip_id`)
             ');
+
         $connection->executeStatement('
                 ALTER TABLE `product`
                 ADD INDEX `idx_flip_id_active` (`flip_id`, `active`)

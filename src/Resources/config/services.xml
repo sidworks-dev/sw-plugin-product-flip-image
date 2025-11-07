@@ -8,6 +8,7 @@
         </service>
 
         <service id="Sidworks\ProductFlipImage\Storefront\Subscriber\ProductLoadedSubscriber">
+            <argument type="service" id="product_media.repository"/>
             <tag name="kernel.event_subscriber"/>
         </service>
     </services>
