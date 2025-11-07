@@ -14,14 +14,21 @@ class Migration1749821608AddPerformanceIndexes extends MigrationStep
 
     public function update(Connection $connection): void
     {
-        $connection->executeStatement('
-                ALTER TABLE `product`
-                ADD INDEX `idx_flip_id` (`flip_id`)
-            ');
+        $schemaManager = $connection->createSchemaManager();
+        $indexes = $schemaManager->listTableIndexes('product');
 
-        $connection->executeStatement('
-                ALTER TABLE `product`
-                ADD INDEX `idx_flip_id_active` (`flip_id`, `active`)
-            ');
+        if (!isset($indexes['idx_flip_id'])) {
+            $connection->executeStatement('
+            ALTER TABLE `product`
+            ADD INDEX `idx_flip_id` (`flip_id`)
+        ');
+        }
+
+        if (!isset($indexes['idx_flip_id_active'])) {
+            $connection->executeStatement('
+            ALTER TABLE `product`
+            ADD INDEX `idx_flip_id_active` (`flip_id`, `active`)
+        ');
+        }
     }
 }

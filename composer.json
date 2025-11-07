@@ -2,7 +2,7 @@
     "name": "sidworks/sw-plugin-product-flip-image",
     "description": "Sidworks Plugin Product Flip Image",
     "type": "shopware-platform-plugin",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "require": {
         "shopware/core": "^6.6"
     },
