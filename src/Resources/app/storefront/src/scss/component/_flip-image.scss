@@ -1,36 +1,38 @@
 .product-image-wrapper:has(.product-flip-image) {
+    position: relative;
+
     .product-image-link {
         position: relative;
+    }
 
-        .product-image,
-        .product-flip-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: opacity 0.15s ease-in-out;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+    .product-image,
+    .product-flip-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity 0.15s ease-in-out;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 
+    .product-image {
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .product-flip-image {
+        opacity: 0;
+        z-index: 2;
+    }
+
+    &:hover {
         .product-image {
-            opacity: 1;
-            z-index: 1;
+            opacity: 0;
         }
 
         .product-flip-image {
-            opacity: 0;
-            z-index: 2;
-        }
-
-        &:hover {
-            .product-image {
-                opacity: 0;
-            }
-
-            .product-flip-image {
-                opacity: 1;
-            }
+            opacity: 1;
         }
     }
 }
