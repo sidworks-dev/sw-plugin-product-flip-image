@@ -1,6 +1,10 @@
 # Change Log for Sidworks ProductFlipImage plugin
 All notable changes to this module will be documented in this file.
 
+## 1.0.5 [27-11-2025]
+### Added
+- 6.7 compatibility
+
 ## 1.0.3 [07-11-2025]
 ### Fixed
 - Check in database tables if columns already exists
