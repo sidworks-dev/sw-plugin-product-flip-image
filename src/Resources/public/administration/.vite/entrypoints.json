@@ -1,0 +1,25 @@
+{
+  "base": "/bundles/sidworksproductflipimage/administration/",
+  "entryPoints": {
+    "sidworks-product-flip-image": {
+      "css": [
+        "/bundles/sidworksproductflipimage/administration/assets/sidworks-product-flip-image-DA4GjhfB.css"
+      ],
+      "dynamic": [],
+      "js": [
+        "/bundles/sidworksproductflipimage/administration/assets/sidworks-product-flip-image-EOgSVnvd.js"
+      ],
+      "legacy": false,
+      "preload": []
+    }
+  },
+  "legacy": false,
+  "metadatas": {},
+  "version": [
+    "7.1.0",
+    7,
+    1,
+    0
+  ],
+  "viteServer": null
+}

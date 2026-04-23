@@ -29,9 +29,25 @@ class ProductExtension extends EntityExtension
                 'flip',
                 'flip_id',
                 ProductMediaDefinition::class,
-                'id',
-                true
-            ))->addFlags(new ApiAware(), new Inherited())
+                'id'
+            ))->addFlags(new ApiAware())
+        );
+
+        $collection->add(
+            (new FkField(
+                'context_photo_id',
+                'contextPhotoId',
+                ProductMediaDefinition::class
+            ))->addFlags(new ApiAware(), new Inherited(), new NoConstraint())
+        );
+
+        $collection->add(
+            (new ManyToOneAssociationField(
+                'contextPhoto',
+                'context_photo_id',
+                ProductMediaDefinition::class,
+                'id'
+            ))->addFlags(new ApiAware())
         );
     }
 

@@ -18,6 +18,24 @@
             Remove flip
         </sw-context-menu-item>
     {% endblock %}
+
+    {% block sw_product_image_context_context_photo_action %}
+        <sw-context-menu-item
+            v-if="!isContextPhoto && !isCover"
+            class="sw-product-image__button-cover"
+            @click="$emit('sw-product-image-context-photo')"
+        >
+            Use as context photo
+        </sw-context-menu-item>
+        <sw-context-menu-item
+            v-if="isContextPhoto && !isCover"
+            class="sw-product-image__button-cover"
+            variant="danger"
+            @click="$emit('sw-product-image-context-photo-delete')"
+        >
+            Remove context photo
+        </sw-context-menu-item>
+    {% endblock %}
 {% endblock %}
 
 
@@ -32,5 +50,15 @@
         appearance="pill"
     >
         Flip
+    </sw-label>
+
+    <sw-label
+        v-if="isContextPhoto && !isCover"
+        class="sw-product-image__context-photo-label"
+        variant="info"
+        size="medium"
+        appearance="pill"
+    >
+        Context
     </sw-label>
 {% endblock %}

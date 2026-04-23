@@ -1,0 +1,11 @@
+{
+  "main.js": {
+    "file": "assets/sidworks-product-flip-image-EOgSVnvd.js",
+    "name": "sidworks-product-flip-image",
+    "src": "main.js",
+    "isEntry": true,
+    "css": [
+      "assets/sidworks-product-flip-image-DA4GjhfB.css"
+    ]
+  }
+}

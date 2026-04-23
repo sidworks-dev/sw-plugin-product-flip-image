@@ -5,9 +5,11 @@ Shopware.Component.override('sw-product-media-form', {
 
     methods: {
         isFlip(mediaItem) {
-            if (this.product.flipId === mediaItem.id) {
-                return true;
-            }
+            return this.product.flipId === mediaItem.id;
+        },
+
+        isContextPhoto(mediaItem) {
+            return this.product.contextPhotoId === mediaItem.id;
         },
 
         markMediaAsFlip(productMedia) {
@@ -16,6 +18,14 @@ Shopware.Component.override('sw-product-media-form', {
 
         removeFlip(productMedia) {
             this.product.flipId = null;
+        },
+
+        markMediaAsContextPhoto(productMedia) {
+            this.product.contextPhotoId = productMedia.id;
+        },
+
+        removeContextPhoto(productMedia) {
+            this.product.contextPhotoId = null;
         }
     }
 });

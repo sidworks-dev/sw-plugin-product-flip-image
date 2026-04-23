@@ -1,16 +1,42 @@
 {% sw_extends "@Storefront/storefront/component/product/card/box-standard.html.twig" %}
 
 {% block component_product_box_image_link_inner %}
-    {{ parent() }}
+    {% set sidworksProductContextImage = product.extensions.sidworksProductContextImage ?? null %}
+
+    {% if sidworksProductContextImage %}
+        {% set attributes = {
+            class: 'product-image product-context-image is-' ~ displayMode,
+            title: (sidworksProductContextImage.translated.title ?: name),
+            alt: (sidworksProductContextImage.translated.alt ?: name),
+            loading: 'lazy'
+        } %}
+
+        {% if displayMode == 'cover' or displayMode == 'contain' %}
+            {% set attributes = attributes|merge({ 'data-object-fit': displayMode }) %}
+        {% endif %}
+
+        {% sw_thumbnails 'product-image-thumbnails' with {
+            media: sidworksProductContextImage,
+            sizes: sizes,
+            attributes: attributes
+        } %}
+    {% else %}
+        {{ parent() }}
+    {% endif %}
 
     {% block component_product_box_image_flip_image %}
         {% set sidworksProductFlipImage = product.extensions.sidworksProductFlipImage ?? null %}
         {% if sidworksProductFlipImage %}
             {% set attributes = {
                 class: 'product-image product-flip-image is-' ~ displayMode,
-                title: (cover.translated.title ?: name),
+                title: (sidworksProductFlipImage.translated.title ?: name),
+                alt: (sidworksProductFlipImage.translated.alt ?: name),
                 loading: 'lazy'
             } %}
+
+            {% if displayMode == 'cover' or displayMode == 'contain' %}
+                {% set attributes = attributes|merge({ 'data-object-fit': displayMode }) %}
+            {% endif %}
 
             {% sw_thumbnails 'product-image-thumbnails' with {
                 media: sidworksProductFlipImage,

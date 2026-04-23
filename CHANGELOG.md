@@ -1,6 +1,18 @@
 # Change Log for Sidworks ProductFlipImage plugin
 All notable changes to this module will be documented in this file.
 
+## 1.0.6 [23-04-2026]
+### Added
+- Support for product context photos in listings, with priority over the regular cover image
+- Administration controls to mark and remove a media item as context photo
+
+### Changed
+- Listing, search, and suggest results now reuse the context photo as primary storefront image while keeping flip image support as hover image
+
+### Fixed
+- Plugin installation migration is now compatible with the current MySQL/MariaDB setup
+- Product association loading no longer triggers invalid SQL on category and search pages
+
 ## 1.0.5 [27-11-2025]
 ### Added
 - 6.7 compatibility

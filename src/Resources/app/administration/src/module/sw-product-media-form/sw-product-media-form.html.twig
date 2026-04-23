@@ -6,6 +6,7 @@
         v-droppable="{ dragGroup: 'product-media', data: mediaItem }"
         :is-cover="isCover(mediaItem)"
         :is-flip="isFlip(mediaItem)"
+        :is-context-photo="isContextPhoto(mediaItem)"
         :is-spatial="isSpatial(mediaItem)"
         :is-ar-ready="isArReady(mediaItem)"
         :is-placeholder="mediaItem.isPlaceholder"
@@ -15,5 +16,7 @@
         @sw-product-image-cover="markMediaAsCover(mediaItem)"
         @sw-product-image-flip="markMediaAsFlip(mediaItem)"
         @sw-product-image-flip-delete="removeFlip(mediaItem)"
+        @sw-product-image-context-photo="markMediaAsContextPhoto(mediaItem)"
+        @sw-product-image-context-photo-delete="removeContextPhoto(mediaItem)"
     />
 {% endblock %}
